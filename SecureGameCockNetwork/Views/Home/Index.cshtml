@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Secure Messaging Service";
+}
+ 
+<div class="jumbotron">
+    <h1 style="color:white">Secure Messaging Service</h1>
+    <p style="color:white">Secure Messaging Service - Gamecocks Social Network</p>
+</div>
+ 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+           <form class="pad-bottom" data-bind="visible: !signedIn() && !isRegistering(), submit: signIn">
+                <div class="form-group">
+                    <label for="username">Use your User name and Password to Sign In</label>
+                    <ul class="text-danger" data-bind="foreach: errors">
+                            <li data-bind="text: $data"></li>
+                    </ul>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="Enter your userame" required/>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Enter your password" required/>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                
+                <p class="registerlink"><a href="#" class="btn-link" data-bind="click: showRegister">Register</a> if you don't have a local account.</p>
+                <br />
+            </form>
+
+<!--Registration Part -->
+            <form class="pad-bottom" role="form" data-bind="visible: isRegistering(), submit: register">
+                <div class="form-group">
+                    <label for="RegisterUserName" class="col-md-10 control-label">User name</label>
+                    <div class="col-md-10">
+                        <input type="text" id="RegisterUserName" class="form-control" data-bind="value: username, hasFocus: true" placeholder="User Name" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="RegisterPassword" class="col-md-10 control-label">Password</label>
+                    <div class="col-md-10">
+                        <input type="password" id="RegisterPassword" class="form-control" data-bind="value: password" placeholder="Password" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="RegisterConfirmPassword" class="col-md-10 control-label">Confirm password</label>
+                    <div class="col-md-10">
+                        <input type="password" id="RegisterConfirmPassword" class="form-control" data-bind="value: confirmPassword" placeholder="Confirm Password" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-default">Register</button>
+                    </div>
+                </div>       
+               <p class="loginlink"><a href="#" class="btn-link" data-bind="click: showLogin">Log in</a> if you already have a local account.</p>                       
+            </form>
+
+
+<!---Registration Part -->
+            <div data-bind="visible: signedIn">
+                <p>You are signed in as <strong data-bind="text: username"></strong></p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div data-bind="visible: notifications().length > 0, foreach: notifications">
+                <div class="summary alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p data-bind="text: $data"></p>
+                </div>
+            </div>
+ 
+            <div class="new-post pad-bottom" data-bind="visible: signedIn">
+                <form data-bind="submit: writePost">
+                    <div class="form-group">
+                        <label for="message">Write a new post:</label>
+                        <textarea class="form-control" name="message" id="message" placeholder="New post"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                 
+                </form>
+            </div>
+ 
+            <ul class="posts list-unstyled" data-bind="foreach: posts">
+                <li>
+                    <p>
+                        <span data-bind="text: username" class="username"></span><br />
+                    </p>
+                    <p>
+                        <span data-bind="text: message"></span>
+                    </p>
+ 
+                    <p class="no-pad-bottom date-posted">Posted <span data-bind="text: moment(date).calendar()" /></p>
+ 
+                    <div class="comments" data-bind="visible: $parent.signedIn() || comments().length > 0">
+                        <ul class="list-unstyled" data-bind="foreach: comments, visible: comments().length > 0">
+                            <li>
+ 
+                                <p>
+                                    <span class="commentor" data-bind="text: username"></span>
+                                    <span data-bind="text: message"></span>
+                                </p>
+                                <p class=" no-pad-bottom date-posted">Posted <span data-bind="text: moment(date).calendar()" /></p>
+                            </li>
+                        </ul>
+ 
+                        <form class="add-comment" data-bind="visible: $parent.signedIn, submit: addComment">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="comment" placeholder="Add a comment" />
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-default" type="submit">Add Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+ 
+@section scripts {
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/knockout-3.4.0.js"></script>
+    <script src="~/Scripts/board.js"></script>
+}
