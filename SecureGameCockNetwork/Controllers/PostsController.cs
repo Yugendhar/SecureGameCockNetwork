@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using SecureGameCockNetwork.Models;
 
 namespace SecureGameCockNetwork.Controllers
 {
     public class PostsController : Controller
     {
-        private MessageBoardContext _ctx;
+        private MessagingBoardContext _ctx;
         public PostsController()
         {
-            this._ctx = new MessageBoardContext();
+            this._ctx = new MessagingBoardContext();
         }
 
         // GET api/<controller>
@@ -29,7 +28,5 @@ namespace SecureGameCockNetwork.Controllers
             //}
             return allPosts;
         }
-    }
-
     }
 }
