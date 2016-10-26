@@ -102,6 +102,9 @@ showLogin = function () {
 //});
 
 self.register = function () {
+
+    vm.errors.removeAll();
+
     registerUser({
         userName: vm.username(),
         password: vm.password(),
@@ -118,10 +121,27 @@ self.register = function () {
             } else {
                 vm.errors.push("An unexpected error occurred.");
             }
+        }).failJSON(function (data) {
+            vm.isRegistering(false);
+
+            if (data && data.error_description) {
+                vm.errors.push(data.error_description);
+            } else {
+                vm.errors.push("An unknown error occurred.");
+            }
+          });
+        }).failJSON(function (data) {
+            var errors;
+
+            //vm.isRegistering(false);
+            errors = toErrorsArray(data);
+
+            if (errors) {
+                vm.errors(errors);
+            } else {
+                vm.errors.push("An unknown error occurred.");
+            }
         });
-
-    });
-
 };
 
 self.registerUser = function (data) {
@@ -129,6 +149,33 @@ self.registerUser = function (data) {
         type: "POST",
         data: data
     });
+};
+
+self.toErrorsArray = function (data) {
+    var errors = new Array(),
+        items;
+
+    if (!data || !data.message) {
+        return null;
+    }
+
+    if (data.modelState) {
+        for (var key in data.modelState) {
+            items = data.modelState[key];
+
+            if (items.length) {
+                for (var i = 0; i < items.length; i++) {
+                    errors.push(items[i]);
+                }
+            }
+        }
+    }
+
+    if (errors.length === 0) {
+        errors.push(data.message);
+    }
+
+    return errors;
 };
 ko.applyBindings(vm);
 
