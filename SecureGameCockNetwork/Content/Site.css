@@ -1,0 +1,95 @@
+﻿body {
+    color:white;
+    background-color:#333333;
+}
+
+.pad-bottom {
+    margin-bottom: 10px;
+}
+ 
+.no-pad-bottom {
+    margin-bottom: 0;
+}
+
+.jumbotron {
+background-color:#690707;
+}
+.btn-primary {
+background-color:#690707;
+font-weight:bold;
+}
+.new-post {
+    background-color: #690707;
+    padding: 15px 10px;
+    /*#c9e0fc;*/
+    /*#519c61;*/
+}
+ 
+.username {
+    font-weight: bolder;
+    color: #004bff; 
+   /*#ff6a00;*/
+}
+ 
+.commentor {
+    font-weight: bold;
+    color: #004bff;
+}
+ 
+.posts li .date-posted {
+    font-size: 12px;
+    font-style: italic;
+}
+ 
+.posts li {
+    border-bottom: 1px solid #CCC;
+    padding: 15px 0;
+}
+ 
+.posts li:first-child {
+    border-top: 1px solid #CCC;
+}
+ 
+.posts .comments {
+    background-color: #796c6c;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    /*#efefef;*/
+}
+ 
+.posts .comments li {
+    padding-top: 10px;
+    border: 0;
+}
+ 
+form.add-comment  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-control {
+    margin-bottom: 15px;
+}
+
+.text-danger {
+    font-weight:bold;
+}
+
+.loginlink {
+    clear: both;
+    margin-left: 15px;
+    padding-top: 10px;
+}
+
+.registerlink {
+    padding-top: 10px;
+}
+
+.btn-default {
+    background-color:#690707;
+font-weight:bold;
+color:white;
+}
+.btn-link {
+font-weight:bold;
+}
