@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using SecureGameCockNetwork.Models;
 
 namespace SecureGameCockNetwork.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : ApiController
     {
         //To Do : Update this file accordingly with account related actions.
         // GET: /Account/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         //ToDo : Registration Process
 
         // POST api/Account/Register
         //[AllowAnonymous]
-        //[Route("Register")]
-        //public async Task<IHttpActionResult> Register(RegisterBindingModel model)
-        //{
+        [Route("Register")]
+        public async Task<IHttpActionResult> Register(RegisterBindingModel model)
+        {
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
@@ -42,7 +44,8 @@ namespace SecureGameCockNetwork.Controllers
         //        return errorResult;
         //    }
 
-        //    return Ok();
-        //}
+           // return Ok();
+            return null;
+        }
     }
 }

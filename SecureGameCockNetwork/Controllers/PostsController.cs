@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web.Http;
 using System.Web.Mvc;
 using SecureGameCockNetwork.Models;
 
 namespace SecureGameCockNetwork.Controllers
 {
-    public class PostsController : Controller
+    public class PostsController : ApiController
     {
         private MessagingBoardContext _ctx;
         public PostsController()
