@@ -86,6 +86,7 @@ self.loginUser = function (data) {
 };
 
 showRegister = function () {
+    vm.errors.removeAll();
     vm.isRegistering(true);
 }
 showLogin = function () {
