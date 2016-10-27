@@ -10,6 +10,6 @@ This is implemented as a part of Internet Security course at USC to provide secu
 We used below technologies
 1.Knockout Js
 2.SignalR
-3.C# AspNet Identity login to provide token based authenticatioin.
+3.C# AspNet Identity login to provide token based authentication.
 4.AspNet WebApi
 5.HTML5,CSS, bootstrap, jquery, moment Js etc
