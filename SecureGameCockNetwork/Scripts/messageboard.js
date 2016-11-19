@@ -111,7 +111,7 @@ self.register = function () {
         password: vm.password(),
         confirmPassword: vm.confirmPassword()
     }).done(function (data) {
-        login({
+        loginUser({
             grant_type: "password",
             username: vm.username(),
             password: vm.password()

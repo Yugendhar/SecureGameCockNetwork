@@ -6,13 +6,14 @@ using Owin;
 
 namespace SecureGameCockNetwork
 {
-    public class Startup
+    public partial class Startup
     {
 
         public void Configuration(IAppBuilder app)
         {   
             //Mapping SignalR to begin connection to hubs from this application
             app.MapSignalR();
+            ConfigureAuth(app);
         }
     }
 }
