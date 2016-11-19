@@ -47,7 +47,6 @@ var vm = {
         vm.isRegistering(false);
         vm.username($('#username').val());
         vm.password($('#password').val());
-        vm.signedIn(true);
         vm.errors.removeAll();
         loginUser({
             grant_type: "password",
@@ -57,6 +56,7 @@ var vm = {
             vm.signedIn(false);
 
             if (data.userName && data.access_token) {
+                vm.signedIn(true);
                 //app.navigateToLoggedIn(data.userName, data.access_token, self.rememberMe());
             } else {
                 vm.errors.push("An unexpected error occurred.");
