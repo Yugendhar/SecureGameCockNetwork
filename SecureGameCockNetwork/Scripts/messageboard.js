@@ -118,6 +118,7 @@ self.register = function () {
         }).done(function (data) {
             vm.isRegistering(false);
             if (data.username && data.access_token) {
+                vm.signedIn(true);
                 //app.navigateToLoggedIn(data.userName, data.access_token, false /* persistent */);
             } else {
                 vm.errors.push("An unexpected error occurred.");
