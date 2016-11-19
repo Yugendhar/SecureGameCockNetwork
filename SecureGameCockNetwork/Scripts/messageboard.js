@@ -117,7 +117,7 @@ self.register = function () {
             password: vm.password()
         }).done(function (data) {
             vm.isRegistering(false);
-            if (data.username && data.access_token) {
+            if (data.userName && data.access_token) {
                 vm.signedIn(true);
                 //app.navigateToLoggedIn(data.userName, data.access_token, false /* persistent */);
             } else {
