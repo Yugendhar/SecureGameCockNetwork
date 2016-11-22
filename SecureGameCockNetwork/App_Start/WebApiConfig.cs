@@ -14,7 +14,7 @@ namespace SecureGameCockNetwork
             // Use camel case for JSON data.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            //Avoiding Circular references
+            //Avoiding Circular references when more than 2 users posts/comments
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling =
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
