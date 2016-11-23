@@ -177,6 +177,7 @@
     <Compile Include="Models\MessagingBoardContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AppOAuthProvider.cs" />
+    <Compile Include="Providers\EncryptDecryptProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
