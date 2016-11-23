@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Moment.js</id>
+    <version>2.15.2</version>
+    <title>Moment.js</title>
+    <authors>Tim Wood, Iskren Chernev, Moment.js contributors</authors>
+    <owners>Tim Wood, Iskren Chernev, Moment.js contributors</owners>
+    <licenseUrl>https://raw.github.com/timrwood/moment/master/LICENSE</licenseUrl>
+    <projectUrl>http://momentjs.com/</projectUrl>
+    <iconUrl>http://pbs.twimg.com/profile_images/482670411402858496/Xrtdc94q_normal.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A lightweight javascript date library for parsing, manipulating, and formatting dates.</description>
+    <summary />
+    <releaseNotes>* Release Oct 23, 2016
+            * [3525] [misc] Speedup month standalone/format regexes IMPORTANT
+            * [3466] [misc] Fix typo of Javanese</releaseNotes>
+    <tags>JavaScript date time browser node.js</tags>
+  </metadata>
+</package>
