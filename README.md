@@ -10,9 +10,14 @@ This is implemented as a part of Internet Security course at USC to provide secu
 
 3. Integrity
 
-We used below technologies
+We used below technologies/concepts
+
 1.Knockout Js
+
 2.SignalR
+
 3.C# AspNet Identity login to provide token based authentication.
+
 4.AspNet WebApi
+
 5.HTML5,CSS, bootstrap, jquery, moment Js etc
